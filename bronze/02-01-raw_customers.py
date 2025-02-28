@@ -6,7 +6,8 @@
 # MAGIC     marital_status STRING,
 # MAGIC     gender STRING,
 # MAGIC     birthdate DATE
-# MAGIC );
+# MAGIC )
+# MAGIC USING DELTA;
 # MAGIC
 
 # COMMAND ----------
@@ -21,7 +22,7 @@ distinct_customers = transactions_raw.select(
 
 # Overwrite customer_raw with distinct data
 distinct_customers.write \
-    .format("parquet") \
+    .format("delta") \
     .mode("overwrite") \
     .saveAsTable("dev.bronze.customer_raw")
 
