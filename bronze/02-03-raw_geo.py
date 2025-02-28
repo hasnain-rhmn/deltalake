@@ -6,7 +6,8 @@
 # MAGIC     city STRING,
 # MAGIC     state STRING,
 # MAGIC     country STRING
-# MAGIC ) ;
+# MAGIC )
+# MAGIC USING DELTA;
 
 # COMMAND ----------
 
@@ -19,6 +20,6 @@ distinct_geo = transactions_raw.select(
 # COMMAND ----------
 
 distinct_geo.write \
-    .format("parquet") \
+    .format("delta") \
     .mode("overwrite") \
     .saveAsTable("dev.bronze.geo_raw")

@@ -6,8 +6,8 @@
 # MAGIC     name STRING,
 # MAGIC     brand STRING,
 # MAGIC     category STRING
-# MAGIC ) ;
-# MAGIC
+# MAGIC )
+# MAGIC USING DELTA;
 
 # COMMAND ----------
 
@@ -20,6 +20,6 @@ distinct_products = transactions_raw.select(
 # COMMAND ----------
 
 distinct_products.write \
-    .format("parquet") \
+    .format("delta") \
     .mode("overwrite") \
     .saveAsTable("dev.bronze.product_raw")
