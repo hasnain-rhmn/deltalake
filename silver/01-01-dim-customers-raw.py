@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %sql
-# MAGIC CREATE TABLE IF NOT EXISTS dev.silver.dim_customers_raw (
+# MAGIC CREATE or replace TABLE dev.silver.dim_customer_raw (
 # MAGIC     customer_key BIGINT,
 # MAGIC     full_name STRING,
 # MAGIC     marital_status STRING,
@@ -24,7 +24,7 @@ from pyspark.sql.functions import current_timestamp
 customer_raw_df = spark.read.table("dev.bronze.customer_raw")
 
 # Define target table
-target_table = DeltaTable.forName(spark, "dev.silver.dim_customers_raw")
+target_table = DeltaTable.forName(spark, "dev.silver.dim_customer_raw")
 
 # Perform Merge
 target_table.alias("tgt").merge(
