@@ -1,4 +1,4 @@
-# Data Pipeline: CSV Ingestion & DeltaLake Processing with ADF & Databricks 🚀
+# Data Pipeline: CSV Ingestion & DeltaLake Processing with ADF & Databricks
 
 ## 📖 Project Overview
 This project demonstrates an **end-to-end data pipeline** for processing **CSV files** using **Azure Data Factory (ADF)** and **Databricks**. The pipeline consists of:
