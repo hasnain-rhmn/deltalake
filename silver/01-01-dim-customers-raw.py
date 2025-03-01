@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %sql
-# MAGIC CREATE or replace TABLE dev.silver.dim_customer_raw (
+# MAGIC CREATE TABLE IF NOT EXISTS dev.silver.dim_customer_raw (
 # MAGIC     customer_key BIGINT,
 # MAGIC     full_name STRING,
 # MAGIC     marital_status STRING,
